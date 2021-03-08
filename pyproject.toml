@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "instagram_test"
+version = "0.1.0"
+description = ""
+authors = ["Daria Kharitonova <kharitonovadari@gmail.com>"]
+packages = [
+    { include = "get_inst_posts"}
+]
+
+[tool.poetry.scripts]
+get-inst-info = "get_inst_posts.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selenium = "^3.141.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
