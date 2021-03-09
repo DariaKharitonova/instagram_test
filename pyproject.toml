@@ -8,7 +8,7 @@ packages = [
 ]
 
 [tool.poetry.scripts]
-get-inst-info = "get_inst_posts.main:main"
+get-inst-info = "get_inst_posts.scripts.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
