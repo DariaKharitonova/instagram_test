@@ -56,7 +56,7 @@ def _get_post_comments(browser, post_id):
     browser.get(f'{INSTAGRAM_URL}/p/{post_id}/?__a=1')
     result = []
     data = json.loads(browser.find_element_by_tag_name('pre').text)
-    comments = data['graphql']['shortcode_media']['edge_media_to_parent_comment']['edges'] # noqa501
+    comments = data['graphql']['shortcode_media']['edge_media_to_parent_comment']['edges']  # noqa501
     for comment in comments:
         result.append(comment['node']['text'])
     return result
@@ -64,7 +64,7 @@ def _get_post_comments(browser, post_id):
 
 def _get_next_posts(browser, user_id, end_cursor):
     browser.get(
-        f'{INSTAGRAM_URL}/graphql/query/?query_id=17888483320059182&id=' # noqa501
+        f'{INSTAGRAM_URL}/graphql/query/?query_id=17888483320059182&id='  # noqa501
         f'{user_id}&first=12&after={end_cursor}')
     time.sleep(PAUSE)
     date_timestamp = _get_datetime()
@@ -89,7 +89,7 @@ def _get_next_posts(browser, user_id, end_cursor):
             comment_count = post["node"]["edge_media_to_comment"]["count"]
             if comment_count > 0:
                 comments = _get_post_comments(browser,
-                                             post["node"]['shortcode'])
+                                              post["node"]['shortcode'])
             else:
                 comments = []
             result.append({"url": url, "likes": likes, "text": text,
