@@ -7,6 +7,12 @@ CLI-utility for simple parsing Instagram profile, that gets:
 - number of likes
 - texts of comments
 
+#### Install package
+For install:
+```bash
+pip3 install git+https://github.com/DariaKharitonova/instagram_test
+```
+
 #### Run to help
 You can run package and to see parameters as:
 ```bash
